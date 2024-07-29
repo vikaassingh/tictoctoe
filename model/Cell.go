@@ -4,7 +4,7 @@ type Cell struct {
 	Row       int
 	Column    int
 	CellState CellState
-	Player    Player
+	Player    IPlayer
 }
 
 type CellState int
@@ -30,7 +30,7 @@ func (cell *Cell) GetCellState() CellState {
 	return cell.CellState
 }
 
-func (cell *Cell) GetPlayer() Player {
+func (cell *Cell) GetPlayer() IPlayer {
 	return cell.Player
 }
 
@@ -49,7 +49,7 @@ func (cell *Cell) SetCellState(CellState CellState) *Cell {
 	return cell
 }
 
-func (cell *Cell) SetPlayer(Player Player) *Cell {
+func (cell *Cell) SetPlayer(Player IPlayer) *Cell {
 	cell.Player = Player
 	return cell
 }

@@ -2,14 +2,14 @@ package model
 
 type Move struct {
 	Cell   Cell
-	Player Player
+	Player IPlayer
 }
 
 func (move *Move) GetCell() Cell {
 	return move.Cell
 }
 
-func (move *Move) GetPlayer() Player {
+func (move *Move) GetPlayer() IPlayer {
 	return move.Player
 }
 
@@ -18,7 +18,7 @@ func (move *Move) SetCell(Cell Cell) *Move {
 	return move
 }
 
-func (move *Move) SetPlayer(Player Player) *Move {
+func (move Move) SetPlayer(Player IPlayer) *Move {
 	move.Player = Player
-	return move
+	return &move
 }

@@ -24,9 +24,9 @@ func (board *Board) PrintBoard() {
 		fmt.Printf("|\t")
 		for j := 0; j < board.Size; j++ {
 			if board.Board[i][j].CellState == Empty {
-				fmt.Printf("|\t")
+				fmt.Printf(" \t|\t")
 			} else {
-				fmt.Printf(board.Board[i][j].Player.GetSymbol() + "|\t")
+				fmt.Printf(board.Board[i][j].GetPlayer().GetSymbol() + "\t|\t")
 			}
 		}
 		fmt.Println()
@@ -37,8 +37,8 @@ func (board *Board) GetSize() int {
 	return board.Size
 }
 
-func (board *Board) GetBoard() *Board {
-	return board
+func (board *Board) GetBoard() [][]Cell {
+	return board.Board
 }
 
 func (board *Board) SetSize(Size int) *Board {
